@@ -1,0 +1,33 @@
+pluginManagement {
+    resolutionStrategy {
+        repositories {
+            maven {
+                url 'https://nexus.paxengine.com.cn/nexus/repository/maven-public/'
+            }
+            maven {
+                url 'https://nexus.paxengine.com.cn/nexus/repository/maven-releases/'
+            }
+            maven {
+                url 'https://nexus.paxengine.com.cn/nexus/repository/maven-snapshots/'
+            }
+            maven {
+                url "https://plugins.gradle.org/m2/"
+            }
+        }
+    }
+    repositories {
+        maven {
+            url 'https://nexus.paxengine.com.cn/nexus/repository/maven-public/'
+        }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        gradlePluginPortal()
+    }
+
+    plugins {
+        id "org.sonarqube" version "3.3"
+    }
+}
+rootProject.name = 'singles'
+include 'app-server'
+include 'manage-server'
+
